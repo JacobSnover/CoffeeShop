@@ -1,0 +1,35 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+@model List<Items>
+
+
+<table>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @item.name
+                <input type="button" class="btn btn-danger" value="Delete" onclick="location.href='@Url.Action("DeleteItem","Home", new { itemId = item.id})'" >
+            </td>
+        </tr>
+
+    }
+
+</table>
+
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+<form class="col-xl-12">
+    <div class="col-xl-4 col-lg-4">
+        <input type="text" class="col-xl-3 col-lg-6 col-md-4" />
+        <input type="text" class="col-xl-3 col-lg-6 col-md-4" />
+        <input type="text" class="col-xl-3 col-lg-6 col-md-4" />
+        <input type="submit" class="col-xl-3 col-lg-6 col-md-4" />
+    </div>
+</form>
